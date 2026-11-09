@@ -71,9 +71,7 @@ Sériový monitor v Arduino IDE musí být zavřený, jinak je port obsazený.
 
 ## Podíl AI asistenta
 
-Skripty a programy pro Arduino napsal podle mých pokynů a s výkladem AI asistent
-(Claude, Anthropic); měření, zapojení a kontrolu výsledků jsem dělal já. Text protokolu
-vznikl ve spolupráci s ním a odpovědnost za něj nesu já.
+Při práci na tomto protokolu jsem pro psaní kódů na Arduino využil AI asistenta Claude. 
 
 ## Licence
 
