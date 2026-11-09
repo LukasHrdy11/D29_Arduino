@@ -1,0 +1,2 @@
+label,n,adc_mean,adc_sd,adc_min,adc_max,vcc_bandgap,U_5V,U_vcc,U_dmm
+okoli,100,946.70,1.09,944,949,5.028,4.6271,4.6484,

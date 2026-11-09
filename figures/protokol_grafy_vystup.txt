@@ -1,0 +1,88 @@
+## 1. VA charakteristika LED (graf_va_led.pdf)
+  červená: U_lin ze 3 sweepů = 1.8803, 1.8864, 1.8797 V, průměr 1.8821 V
+  žlutá: U_lin ze 3 sweepů = 1.9738, 1.9616, 1.9714 V, průměr 1.9689 V
+  modrá: U_lin ze 3 sweepů = 2.6433, 2.6464, 2.6479 V, průměr 2.6459 V
+  1240/λ (nominální λ): cervena 1.968 V, zluta 2.101 V, modra 2.638 V
+  poměr U_lin modrá/červená 1.406 ± 0.01 vs. λ_č/λ_m = 1.340: rozdíl 6.6 σ; vysvětlil by ho λ_č = 661 nm nebo λ_m = 448 nm
+  závěrný směr: max |A1 kód| = 0 -> |I| < 0,5 LSB / 220 Ω = 11 µA
+-> graf_va_led.pdf
+
+## 2. τ(R), úkoly 3 a 4 (graf_tau_R.pdf, graf_srovnani_10k.pdf)
+| R | τ3 / ms | τ4 / ms | τ4 nab / ms | τ4 vyb / ms | bodů na τ (3) |
+| 10k | 34.90 ± 0.38 | 34.684 ± 0.032 | 34.658 ± 0.018 | 34.710 ± 0.018 | 2.8 |
+| 22.1k | 78.02 ± 0.27 | 77.956 ± 0.091 | 77.880 ± 0.043 | 78.033 ± 0.043 | 6.3 |
+| 56k | 196.39 ± 0.29 | 196.159 ± 0.226 | 195.966 ± 0.100 | 196.352 ± 0.101 | 15.9 |
+| 100k | 346.00 ± 0.32 | 345.546 ± 0.373 | 345.222 ± 0.156 | 345.870 ± 0.154 | 28.1 |
+| 240k | 861.54 ± 1.74 | 862.540 ± 0.753 | 861.953 ± 0.434 | 863.126 ± 0.439 | 69.5 |
+  úkol 3: C = 3.5285 ± 0.0228 µF, chi2 = 0.29/4
+  úkol 4: C = 3.5259 ± 0.0200 µF, chi2 = 0.37/4
+  úkol 4: C_cal(22,1k) = 3.5274 ± 0.0208 µF
+  R/R22 10k: 0.44491 ± 0.00066 -> 9.833 kΩ
+  R/R22 56k: 2.51627 ± 0.00412 -> 55.609 kΩ
+  R/R22 100k: 4.43256 ± 0.00704 -> 97.960 kΩ
+  R/R22 240k: 11.06439 ± 0.01609 -> 244.523 kΩ
+  Δτ = τ4 − τ3: vážený průměr -0.180 ± 0.180 ms
+  vyb − nab 10k: 0.150 % τ
+  vyb − nab 22.1k: 0.196 % τ
+  vyb − nab 56k: 0.197 % τ
+  vyb − nab 100k: 0.187 % τ
+  vyb − nab 240k: 0.136 % τ
+-> graf_tau_R.pdf
+  56k rep1 (úkol 3): 4874 vzorků za 60.0 s, přechodů nahoru přes 2,5 V: 7
+-> graf_56k_zaznam.pdf
+-> graf_srovnani_10k.pdf
+  lokální τ nabíjení (30 průběhů): 1.02 V: -0.67 ± 0.03 %, 2.02 V: -0.02 ± 0.03 %, 2.89 V: +0.28 ± 0.03 %, 3.59 V: +0.03 ± 0.04 %, 4.17 V: +0.09 ± 0.04 %, 4.56 V: -0.05 ± 0.07 %
+  lokální τ vybíjení (30 průběhů): 3.97 V: -0.31 ± 0.04 %, 2.97 V: +0.52 ± 0.03 %, 2.10 V: +0.57 ± 0.04 %, 1.39 V: -0.25 ± 0.05 %, 0.82 V: +0.14 ± 0.05 %, 0.43 V: +0.33 ± 0.07 %
+
+## 4. Linearita fotodiody (graf_linearita.pdf)
+  fit U = A/(r+d)^n: d = 1.07 ± 0.47 cm, n = 2.252 ± 0.150, chi2 = 6.3/6; gamma = 1.126 ± 0.075
+  tabulka (r | ΔN ± 3 % | U/mV = I/nA ± 3 % | počet měření | poznámka):
+    $1$ & $1004$ & $4904$ & 1 & saturace \\
+    $1,5$ & $588 \pm 18$ & $2873 \pm 86$ & 1 & mimo fit \\
+    $2$ & $387 \pm 12$ & $1891 \pm 57$ & 1 &  \\
+    $3$ & $190 \pm 6$ & $930 \pm 28$ & 1 &  \\
+    $4$ & $111 \pm 3$ & $544 \pm 16$ & 1 &  \\
+    $5$ & $76 \pm 2$ & $370 \pm 11$ & 1 &  \\
+    $6$ & $56,2 \pm 1,7$ & $275 \pm 8$ & 1 &  \\
+    $8$ & $32,9 \pm 1,0$ & $161 \pm 5$ & 1 &  \\
+    $10$ & $20,5 \pm 0,6$ & $100 \pm 3$ & 2 &  \\
+    $12$ & $14,4 \pm 0,4$ & $70 \pm 2$ & 1 &  \\
+    $13,3$ & $10,7 \pm 0,3$ & $52,3 \pm 1,6$ & 1 &  \\
+-> graf_linearita.pdf
+  sup0_otevreno pozadí    2.2  amplituda 22.313 ± 0.023
+  sup1         pozadí   12.8  amplituda 22.674 ± 0.026
+  sup2         pozadí   17.3  amplituda 22.694 ± 0.027
+  sup3         pozadí   63.1  amplituda 23.058 ± 0.026
+  sup7_zpet1   pozadí   63.5  amplituda 23.038 ± 0.026
+  sup4         pozadí  124.9  amplituda 23.226 ± 0.027
+  sup5         pozadí  203.6  amplituda 23.423 ± 0.029
+  sup6         pozadí  234.1  amplituda 23.692 ± 0.028
+
+## 5. Průměrování σ(N) (graf_sigma_N.pdf)
+  3v3            průměr  666.94: σ(1)=0.389, σ(3)=0.240, σ(10)=0.136, σ(30)=0.080, σ(100)=0.048, σ(300)=0.032, σ(1000)=0.024
+  fd_tma         průměr    0.94: σ(1)=1.523, σ(3)=0.955, σ(10)=0.480, σ(30)=0.192, σ(100)=0.055, σ(300)=0.035, σ(1000)=0.018
+  fd_okoli       průměr   28.77: σ(1)=3.828, σ(3)=2.780, σ(10)=1.169, σ(30)=0.440, σ(100)=0.222, σ(300)=0.213, σ(1000)=0.209
+  fd_LED_trvale  průměr  351.78: σ(1)=3.237, σ(3)=2.182, σ(10)=1.261, σ(30)=0.676, σ(100)=0.565, σ(300)=0.563, σ(1000)=0.563
+  fr_tma         průměr    4.70: σ(1)=0.647, σ(3)=0.395, σ(10)=0.257, σ(30)=0.210, σ(100)=0.194, σ(300)=0.188, σ(1000)=0.183
+  fr_LED_trvale  průměr  380.50: σ(1)=2.023, σ(3)=1.996, σ(10)=1.987, σ(30)=1.985, σ(100)=1.984, σ(300)=1.974, σ(1000)=1.877
+-> graf_sigma_N.pdf
+
+## 6. Frekvenční odezva (graf_bode.pdf)
+  fotorezistor: H = 375.8 kódu, R(0,5 Hz)/R_DC = 0.937, 0,707 vůči DC při 5.37 Hz, vůči 0,5 Hz při 6.83 Hz; 50 Hz: 0.244, 69.3°; fáze 45° při 16.4 Hz
+  fotodioda: R(50)/R(0,5) = 0.9945, fáze 0.285 °/Hz -> zpoždění 0.791 ms
+  nejistota fáze σ_A/A: fotodioda 0.001–0.096°, fotorezistor 0.002–0.025°; σ_A/A_0 max 0.0017
+-> graf_bode.pdf
+
+## 7. Signál pod šumem (graf_slaby_signal.pdf)
+  I = 0.1189, Q = -0.0360 (json 0.1189, -0.036 ± 0.0013), pozadí 54.66, σ surových dat 1.67, sklon σ(T) -0.570
+  průměrný průběh přes 1267 period: skok zap−vyp (bez 2 vzorků po hraně) 0.186 kódu, nejistota bodu 0.047; první vzorek po rozsvícení +1.30, po zhasnutí -1.32
+  SNR(T): 0.6 s: 2.1, 1.8 s: 5.4, 5.0 s: 11.0, 13.5 s: 20.0, 36.6 s: 35.4, 99.1 s: 64.8, konec 180 s: 91.5
+-> graf_slaby_signal.pdf
+
+## 8. Spektrum šumu (graf_spektrum.pdf)
+  pin 3V3: medián amplitudy 2–490 Hz 0.00195 kódu, 50 Hz 0.0725
+  čára 50 Hz: vrchol 50.25 Hz, 0.895 kódu
+  čára 159 Hz: vrchol 159.25 Hz, 0.393 kódu
+  čára 428 Hz: vrchol 427.75 Hz, 0.517 kódu
+  fotodioda, tma: medián amplitudy 2–490 Hz 0.00292 kódu, 50 Hz 0.8948
+-> graf_spektrum.pdf
